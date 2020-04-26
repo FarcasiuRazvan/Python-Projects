@@ -1,0 +1,11 @@
+VAR 23d3e3e: int; b : bool ;arr[20];
+EXECUTE a23d<- 20;
+b <-read ;
+b <-true;
+print b;
+if a23d<b b
+then { a23d<- b;} else{b<-a23d+2; };
+while a23d<=b{a23d+2 3;};
+print a23d;
+print b;
+END

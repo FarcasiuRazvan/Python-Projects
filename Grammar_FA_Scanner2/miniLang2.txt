@@ -1,0 +1,171 @@
+identifier,letters,digits,letter,digit,const,int,array,boolean,single_const,nz_digits,sign,arraylist,program,declist,cmpdstmt,declaration,type,posint,stmt,assignstmt,iostmt,ifstmt,whilestmt,expression,term,operator,condition,relational_op,relation
+eps,0,1,2,3,4,5,6,7,8,9,+,-,*,/,<-,;,<,<=,==,!=,>=,>,&&,||,(,),[,],{,},:,;,space,arrayList,integer,bool,if,then,else,while,read,print,true,false,VAR,EXECUTE,END,AND,OR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+program
+program->VAR declist EXECUTE cmpdstmt END
+declist->declaration ;
+declist->declaration ; declist
+declaration->identifier : type
+declaration->identifier [ posint ]
+type->integer
+type->bool
+type->arrayList
+const->int
+const->boolean
+const->array
+posint->0
+posint->nz_digits digits
+cmpdstmt->stmt ;
+cmpdstmt->stmt ; cmpdstmt
+stmt->assignstmt
+stmt->iostmt
+stmt->ifstmt
+stmt->whilestmt
+assignstmt->identifier <- expression
+expression->term
+expression->term operator expression
+term->identifier
+term->const
+operator->+
+operator->-
+operator->/
+operator->*
+iostmt->identifier <- read
+iostmt->print ( identifier )
+iostmt->print ( const )
+ifstmt->if ( condition ) then { cmpdstmt }
+ifstmt->if ( condition ) then { cmpdstmt } else { cmpdstmt }
+condition->expression
+condition->expression relational_op condition
+whilestmt->while ( condition ) { cmpdstmt }
+relational_op->AND
+relational_op->OR
+relational_op->&&
+relational_op->||
+relation-><
+relation-><=
+relation->==
+relation->!=
+relation->>=
+relation->>
+identifier->letters
+identifier->letters digits identifier
+letter->A
+letter->B
+letter->C
+letter->a
+letter->b
+letter->c
+letters->letter
+letters->letter letters
+digit->0
+digit->nz_digits
+digits->digit
+digits->digit digits
+const->int
+const->boolean
+const->array
+single_const->int
+single_const->boolean
+nz_digits->1
+nz_digits->2
+nz_digits->3
+nz_digits->4
+nz_digits->5
+nz_digits->6
+nz_digits->7
+nz_digits->8
+nz_digits->9
+int->0
+int->sign nz_digits
+int->nz_digits
+int->sign nz_digits digits
+int->nz_digits digits
+sign->+
+sign->-
+boolean->true
+boolean->false
+VAR i : int EXECUTE i <- 2 ; END
+
+
+
+
+
+
+
+expression->term
+term->identifier
+term->const
+identifier->letters
+identifier->letters digits identifier
+letter->A
+letter->B
+letter->C
+letter->a
+letter->b
+letter->c
+letters->letter
+digit->0
+digit->nz_digits
+digits->digit
+digits->digit digits
+nz_digits->1
+nz_digits->2
+nz_digits->3
+nz_digits->4
+nz_digits->5
+nz_digits->6
+nz_digits->7
+nz_digits->8
+nz_digits->9
+int->digit
+int->nz_digits digits
+
+
+
+
+
+
+
+
+
+condition->nz_digits relation letter
+term->identifier
+term->nz_digits
+relation->>
+relation->>=
+relation-><=
+relation-><
+relation->!=
+relation->==
+
+
+
+
+
+
+
+
+
+program,declist,assignstmt,stmt,declaration,identifier,letter,nz_digits,condition,ifstmt,term,relation,cmpstmt,ifstmt2,slash,dec
+eps,14,15,16,3,7,23,26,27,25,24,29,28,0,1
+program
+program->14 declist 15 cmpstmt 16
+declist->declaration
+declaration->identifier 3
+cmpstmt->stmt
+stmt->assignstmt
+stmt->ifstmt
+ifstmt->condition 7 stmt
+assignstmt->identifier 23 nz_digits
+condition->nz_digits relation letter
+term->identifier
+term->nz_digits
+relation->26
+relation->27
+relation->25
+relation->24
+relation->29
+relation->28
+identifier->0
+nz_digits->1
+14 0 3 15 1 24 0 7 1 24 0 7 1 28 0 7 0 23 1 16

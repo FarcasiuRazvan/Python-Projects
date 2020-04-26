@@ -1,0 +1,23 @@
+program,declist,assignstmt,stmt,declaration,identifier,letter,nz_digits,condition,ifstmt,term,relation,cmpstmt,ifstmt2,slash,dec
+eps,14,15,16,3,7,23,26,27,25,24,29,28,0,1
+program
+program->14 declist 15 cmpstmt 16
+declist->declaration
+declaration->identifier 3
+cmpstmt->stmt
+stmt->assignstmt
+stmt->ifstmt
+ifstmt->condition 7 stmt
+assignstmt->identifier 23 nz_digits
+condition->nz_digits relation identifier
+term->identifier
+term->nz_digits
+relation->26
+relation->27
+relation->25
+relation->24
+relation->29
+relation->28
+identifier->0
+nz_digits->1
+14 0 3 15 1 24 0 7 1 24 0 7 1 28 0 7 0 23 1 16
